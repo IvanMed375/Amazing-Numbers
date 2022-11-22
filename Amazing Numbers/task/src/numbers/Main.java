@@ -367,17 +367,18 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Welcome to Amazing Numbers!\n\nSupported " +
-                "requests:\n- enter a natural number to know its " +
-                "properties;\n- enter two natural numbers to obtain the " +
-                "properties of the list:\n  * the first parameter " +
-                "represents a starting number;\n  * the second parameters " +
-                "show how many consecutive numbers are to be processed;\n" +
-                "- two natural numbers and two properties to search for;\n" +
-                "- a property preceded by minus must not be present " +
-                        "in numbers;\n" +
-                "- separate the parameters with one space;\n" +
-                "- enter 0 to exit.");
+        System.out.println("""
+                Welcome to Amazing Numbers!
+
+                Supported requests:
+                - enter a natural number to know its properties;
+                - enter two natural numbers to obtain the properties of the list:
+                  * the first parameter represents a starting number;
+                  * the second parameters show how many consecutive numbers are to be processed;
+                - two natural numbers and two properties to search for;
+                - a property preceded by minus must not be present in numbers;
+                - separate the parameters with one space;
+                - enter 0 to exit.""");
         long number;
         int range = 1;
         boolean one;
@@ -418,7 +419,7 @@ public class Main {
             } catch (Exception e) {
                 one = true;
             }
-            if (temp.length <= 2) {
+            if (temp.length == 2) {
                 special = false;
             }
             for (int i = 0; i < temp.length - 2; i++) {
@@ -550,60 +551,68 @@ public class Main {
                     continue;
                 }
                 if (priority[0] && priority[1]) {
-                    System.out.format("The request contains mutually " +
-                            "exclusive properties: [EVEN, ODD]\n" +
-                            "There are no numbers with these properties.\n");
+                    System.out.format("""
+                            The request contains mutually exclusive properties: [EVEN, ODD]
+                            There are no numbers with these properties.
+                            """);
                     continue;
                 }
                 if (priority[3] && priority[6]) {
-                    System.out.format("The request contains mutually " +
-                            "exclusive properties: [DUCK, SPY]\n" +
-                            "There are no numbers with these properties.\n");
+                    System.out.format("""
+                            The request contains mutually exclusive properties: [DUCK, SPY]
+                            There are no numbers with these properties.
+                            """);
                     continue;
                 }
                 if (priority[8] && priority[7]) {
-                    System.out.format("The request contains mutually " +
-                            "exclusive properties: [SUNNY, SQUARE]\n" +
-                            "There are no numbers with these properties.\n");
+                    System.out.format("""
+                            The request contains mutually exclusive properties: [SUNNY, SQUARE]
+                            There are no numbers with these properties.
+                            """);
                     continue;
                 }
                 if (priority[10] && priority[11]) {
-                    System.out.format("The request contains mutually " +
-                            "exclusive properties: [HAPPY, SAD]\n" +
-                            "There are no numbers with these properties.\n");
+                    System.out.format("""
+                            The request contains mutually exclusive properties: [HAPPY, SAD]
+                            There are no numbers with these properties.
+                            """);
                     continue;
                 }
                 if (minusPriority[0] && minusPriority[1]) {
-                    System.out.format("The request contains mutually " +
-                            "exclusive properties: [-EVEN, -ODD]\n" +
-                            "There are no numbers with these properties.\n");
+                    System.out.format("""
+                            The request contains mutually exclusive properties: [-EVEN, -ODD]
+                            There are no numbers with these properties.
+                            """);
                     continue;
                 }
                 if (minusPriority[3] && minusPriority[6]) {
-                    System.out.format("The request contains mutually " +
-                            "exclusive properties: [-DUCK, -SPY]\n" +
-                            "There are no numbers with these properties.\n");
+                    System.out.format("""
+                            The request contains mutually exclusive properties: [-DUCK, -SPY]
+                            There are no numbers with these properties.
+                            """);
                     continue;
                 }
                 if (minusPriority[8] && minusPriority[7]) {
-                    System.out.format("The request contains mutually " +
-                            "exclusive properties: [-SUNNY, -SQUARE]\n" +
-                            "There are no numbers with these properties.\n");
+                    System.out.format("""
+                            The request contains mutually exclusive properties: [-SUNNY, -SQUARE]
+                            There are no numbers with these properties.
+                            """);
                     continue;
                 }
                 if (minusPriority[10] && minusPriority[11]) {
-                    System.out.format("The request contains mutually " +
-                            "exclusive properties: [-HAPPY, -SAD]\n" +
-                            "There are no numbers with these properties.\n");
+                    System.out.format("""
+                            The request contains mutually exclusive properties: [-HAPPY, -SAD]
+                            There are no numbers with these properties.
+                            """);
                     continue;
                 }
                 boolean same = false;
                 for (int i = 0; i < 12; i++) {
                     if (priority[i] && minusPriority[i]) {
-                        System.out.format("The request contains mutually " +
-                                "exclusive properties: [%s, %s]\n" +
-                                "There are no numbers with these " +
-                                "properties.\n",
+                        System.out.format("""
+                                        The request contains mutually exclusive properties: [%s, %s]
+                                        There are no numbers with these properties.
+                                        """,
                                 possibleProperties[i].toUpperCase(),
                                 possibleProperties[i + 12].toUpperCase());
                         same = true;
